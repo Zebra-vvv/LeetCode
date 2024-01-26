@@ -5,7 +5,7 @@ class Solution:
     def search(self, nums: List[int], target: int) -> int:
         left, right = 0, len(nums) - 1  
         while left <= right:
-            mid = left + (right - left) // 2
+            mid = left + (right - left) // 2 # 两个/是python中的整数除法, 直接舍弃小数部分，保留整数部分
             if nums[mid] > target:
                 right = mid - 1
             elif nums[mid] < target:
