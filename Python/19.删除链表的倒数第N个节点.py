@@ -23,3 +23,29 @@ class Solution:
         
         return dummyHead.next
 
+if __name__ == "__main__":
+    # 创建一个链表: 1 -> 2 -> 3 -> 4 -> 5
+    head = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5)))))
+
+    # 打印原始链表
+    print("Original Linked List:")
+    cur = head
+    while cur:
+        print(cur.val, end=" -> ")
+        cur = cur.next
+    print("None")
+
+    # 创建 Solution 实例
+    solution = Solution()
+
+    # 删除倒数第2个节点
+    n = 2
+    new_head = solution.removeNthFromEnd(head, n)
+
+    # 打印删除后的链表
+    print(f"\nLinked List after removing {n}th node from the end:")
+    cur = new_head
+    while cur:
+        print(cur.val, end=" -> ")
+        cur = cur.next
+    print("None")
