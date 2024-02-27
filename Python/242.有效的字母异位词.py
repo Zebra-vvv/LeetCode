@@ -10,8 +10,10 @@ class Solution:
             record[ord(i)-ord('a')] += 1
         for i in t:
             record[ord(i)-ord('a')] -= 1
-        result = all(count == 0 for count in record)
-        return result
+        for i in range(26):
+            if record[i] != 0:
+                return False
+        return True
 
 
 if __name__ == "__main__":
