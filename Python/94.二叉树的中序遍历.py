@@ -46,7 +46,7 @@ if __name__ == "__main__":
     node3 = TreeNode(3, node6, node7)
     node1 = TreeNode(1, node2, node3)
 
-    solution = Solution3()
+    solution = Solution2()
     result = solution.inorderTraversal(node1)
     print(result)  
     
