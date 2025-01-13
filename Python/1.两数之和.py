@@ -24,3 +24,12 @@ if __name__ == "__main__":
     solution = Solution()
     result = solution.twoSum(nums, target)
     print(result)
+
+"""
+模拟
+index     value      target-value       records                  result
+0           2             7              {2:0}                     []
+1           7             2              {2:0}                    [1,0]
+2          11            -2              {2:0, 11:2}              [1,0]
+3          15            -6              {2:0, 11:2, 15:3}        [1,0]
+""" 
