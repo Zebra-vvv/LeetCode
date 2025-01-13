@@ -12,6 +12,7 @@ class Solution1:
 # 双指针法
 class Solution2:
     def sortedSquares(self, nums: List[int]) -> List[int]:
+        # 因为题目给出的是递增序列, 平方后最大值肯定出现在两边, 从两边依次选择, 从大到小放入新数组即可
         l, r, i = 0, len(nums)-1, len(nums)-1
         res = [0] * len(nums)  # 需要提前定义列表，存放结果
         while l <= r:

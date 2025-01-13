@@ -26,7 +26,7 @@ if __name__ == "__main__":
     print(result)
 
 """
-模拟
+模拟算法过程:
 index     value      target-value       records                  result
 0           2             7              {2:0}                     []
 1           7             2              {2:0}                    [1,0]
