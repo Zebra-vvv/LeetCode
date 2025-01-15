@@ -2,11 +2,15 @@ from typing import List
 
 class Solution:
     def generateMatrix(self, n: int) -> List[List[int]]:
-        nums = [[0] * n for _ in range(n)]
+
+        nums = []
+        for _ in range(n):
+            nums.append([0] * n)
+
         startx, starty = 0, 0                        # 起始点的坐标
         loop, mid = n // 2, n // 2                   # 总共转的圈数、矩阵的中心点坐标（n为奇数时）
         count = 1                                    # 计数, 用来赋值
-        for offset in range(1, loop + 1):            # 每转一圈，偏移量加1
+        for offset in range(1, loop + 1):            # 每转一圈，起始点横纵坐标偏移量加1
             for i in range(starty, n - offset):      # 从左至右, 左闭右开
                 nums[startx][i] = count
                 count += 1
