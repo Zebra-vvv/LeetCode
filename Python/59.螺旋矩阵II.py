@@ -11,16 +11,16 @@ class Solution:
         loop, mid = n // 2, n // 2                   # 总共转的圈数、矩阵的中心点坐标（n为奇数时）
         count = 1                                    # 计数, 用来赋值
         for offset in range(1, loop + 1):            # 每转一圈，起始点横纵坐标偏移量加1
-            for i in range(starty, n - offset):      # 从左至右, 左闭右开
+            for i in range(starty, n - offset):      # 从左至右, 填充不同的列(range是左闭右开的)
                 nums[startx][i] = count
                 count += 1
-            for i in range(startx, n - offset):      # 从上至下
+            for i in range(startx, n - offset):      # 从上至下, 填充不同的行, 所以行坐标变动, 用startx
                 nums[i][n-offset] = count
                 count += 1
-            for i in range(n - offset, starty, -1):  # 从右至左
+            for i in range(n - offset, starty, -1):  # 从右至左, 填充不同的列, 所以列坐标变动, 用starty
                 nums[n-offset][i] = count
                 count += 1
-            for i in range(n - offset, startx, -1):  # 从下至上
+            for i in range(n - offset, startx, -1):  # 从下至上, 填充不同的行
                 nums[i][starty] = count
                 count += 1
 
