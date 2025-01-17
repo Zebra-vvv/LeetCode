@@ -12,7 +12,7 @@ class MyLinkedList:
 
     def get(self, index: int) -> int:
 
-        if index < 0 or index >= self.size:  # 异常情况判断
+        if index < 0 or index >= self.size:  # 注意这里有等号, 因为只能取已有节点的值
             return -1
 
         current = self.dummyHead.next
@@ -33,7 +33,7 @@ class MyLinkedList:
 
     def addAtIndex(self, index: int, val: int) -> None:
 
-        if index < 0 or index > self.size:  # index 越界
+        if index < 0 or index > self.size:  # 这里没有等号, 因为取等号代表在链尾插入, 是合法情况
             return
 
         current = self.dummyHead
@@ -44,7 +44,7 @@ class MyLinkedList:
 
     def deleteAtIndex(self, index: int) -> None:
 
-        if index < 0 or index >= self.size:  # index 越界
+        if index < 0 or index >= self.size:  # 注意这里有等号, 因为只能删已有节点
             return
 
         current = self.dummyHead
