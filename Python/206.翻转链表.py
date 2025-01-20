@@ -31,10 +31,10 @@ if __name__ == "__main__":
 
     # 打印原始链表
     print("原始链表:")
-    current = head
-    while current:
-        print(current.val, end=" -> ")
-        current = current.next
+    cur = head
+    while cur:
+        print(cur.val, end=" -> ")
+        cur = cur.next
     print("None")
 
     # 创建 Solution 类的实例
@@ -45,8 +45,8 @@ if __name__ == "__main__":
 
     # 打印反转后的链表
     print("\n反转后的链表:")
-    current = reversed_head
-    while current:
-        print(current.val, end=" -> ")
-        current = current.next
+    cur = reversed_head
+    while cur:
+        print(cur.val, end=" -> ")
+        cur = cur.next
     print("None")
