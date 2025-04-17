@@ -1,7 +1,5 @@
 from typing import List
 
-from typing import List
-
 class Solution:
     def twoSum(self, nums:List[int], target:int) -> List[int]:
         record = {} # 存放遍历到的元素, key是nums中的元素, value是该元素在nums中的下标
