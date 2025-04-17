@@ -9,6 +9,7 @@ class Solution:
             # 如果n在record中已经出现过，说明会陷入无限循环，不是快乐数
             if n in record:
                 return False
+            # 先判断是否已经出现过, 没出现过就把本轮计算的平方和加入到set中
             else:
                 record.add(n)
 
