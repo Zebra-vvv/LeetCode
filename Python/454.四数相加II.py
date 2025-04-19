@@ -12,7 +12,7 @@ class Solution:
                     records[a+b] += 1
                 else:
                     records[a+b] = 1  # 如果还没有a+b这个键值，必须先初始化为1
-        count = 0
+        count = 0 # 满足四数相加等于0的组合个数
         for c in nums3:
             for d in nums4:
                 target = 0-(c+d)
