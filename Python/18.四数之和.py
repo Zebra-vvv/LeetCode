@@ -1,42 +1,41 @@
 from typing import List
 
-
 class Solution:
     def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
-        result = []
+        res = []
         nums.sort()
-
         for a in range(len(nums)):
 
-            # 如果nums[i] == nums[i - 1], 那么这一轮的结果在上一轮都已收集了, 直接遍历下一轮
-            if a > 0 and nums[a] == nums[a - 1]:
+            # a的去重
+            if a > 0 and nums[a] == nums[a-1]:
                 continue
+            b = a + 1
+            for b in range(a+1, len(nums)):   # 注意第二层循环的范围写法
 
-            for b in range(a+1, len(nums)):
-
-                if b > a+1 and nums[b] == nums[b - 1]:
+                # b的去重不要遗漏了
+                if b > a + 1 and nums[b] == nums[b - 1]:
                     continue
 
-                left, right = b + 1, len(nums) - 1
-                while left < right:
-                    sum = nums[a] + nums[b] + nums[left] + nums[right]
-                    if sum < target:
-                        left += 1
-                    elif sum > target:
-                        right -= 1
+                c = b + 1
+                d = len(nums) - 1
+                while c < d:
+                    sum = nums[a] + nums[b] + nums[c] + nums[d]
+                    if sum > target:
+                        d -= 1
+                    elif sum < target: 
+                        c += 1
                     else:
-                        result.append([nums[a], nums[b], nums[left], nums[right]])
+                        res.append([nums[a], nums[b], nums[c], nums[d]])
+                        c += 1
+                        d -= 1
 
-                        # 和上面的去重逻辑相同, 值和之前一轮的相等就不需要重复收集结果了
-                        while left < right and nums[right] == nums[right - 1]:
-                            right -= 1
-                        while left < right and nums[left] == nums[left + 1]:
-                            left += 1
-
-                        right -= 1
-                        left += 1
-        return result
-
+                        # c和d的去重
+                        while c < d and nums[c] == nums[c-1]:
+                            c += 1
+                        while c < d and nums[d] == nums[d+1]:
+                            d -= 1
+        return res
+        
 
 if __name__ == "__main__":
     solution = Solution()
