@@ -6,6 +6,7 @@ class Solution:
             # 1. 每隔 2k 个字符的前 k 个字符进行反转
             # 2. 剩余字符小于 2k 但大于或等于 k 个，则反转前 k 个字符
             # 1和2两种情况都可以用 if 中的代码执行(因为都是反转前k个)
+            # 还没遍历到最后k个的时候, 统一反转前k个
             if i + k <= len(s_list):
                 s_list[i:i+k] = reversed(s_list[i:i+k])
 
