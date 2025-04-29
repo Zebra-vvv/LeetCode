@@ -17,7 +17,7 @@ class Solution:
                 j = next[j - 1] # j连续回退到前一位对应的next数组值
             if s[i] == s[j]:
                 j += 1
-            next[i] = j
+            next[i] = j # 每层for循环找到一个next[i]数组的值
     
     def strStr(self, haystack: str, needle: str) -> int:
         if not needle:
@@ -31,15 +31,15 @@ class Solution:
 
             # 遇到不匹配的字符, 需要连续回退
             while j > 0 and haystack[i] != needle[j]:
-                j = next[j - 1]
+                j = next[j - 1] # 需要回退的是模式串指针，表示从哪里开始重新匹配
             
             # 相等的情况
             if haystack[i] == needle[j]:
                 j += 1
 
             # 模式串全部匹配成功
-            if j == len(needle):
-                return i - len(needle) + 1
+            if j == len(needle): # 这个条件才表示模式串最后一位也匹配成功了，然后+1
+                return i - len(needle) + 1 # 回退一个模式串的长度, 就是开始的下标
         return -1
     
 if __name__ == "__main__":
