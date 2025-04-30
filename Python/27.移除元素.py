@@ -2,15 +2,15 @@ from typing import List
 
 # 双指针法
 class Solution:
-    def removeElement(self, nums: List[int], val: int) -> int:
-        slowIndex, fastIndex = 0, 0  # slowindex表示新数组下标, fastindex表示新数组的值
-        size = len(nums)
-        while fastIndex < size:
-            if nums[fastIndex] != val:
-                nums[slowIndex] = nums[fastIndex]
-                slowIndex += 1 # 只在找到新数组需要的元素时, slowIndex才会移动
-            fastIndex += 1
-        return slowIndex
+    def removeElement(self, nums:List[int], val:int) -> int:
+        slow = 0
+        fast = 0
+        while fast < len(nums): # while条件
+            if nums[fast] != val: 
+                nums[slow] = nums[fast]
+                slow += 1 # slow 只取需要的元素
+            fast += 1 # fast 满不满足都递增
+        return slow + 1
 
 
 if __name__ == "__main__":
