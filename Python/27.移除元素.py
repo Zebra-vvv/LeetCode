@@ -10,7 +10,7 @@ class Solution:
                 nums[slow] = nums[fast]
                 slow += 1 # slow 只取需要的元素
             fast += 1 # fast 满不满足都递增
-        return slow + 1
+        return slow
 
 
 if __name__ == "__main__":
