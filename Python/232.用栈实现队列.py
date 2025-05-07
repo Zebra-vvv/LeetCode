@@ -2,8 +2,8 @@ class MyQueue:
 
     def __init__(self):
         # python的栈可以用List来实现，Python的List提供了足够的方法来模拟栈的所有操作
-        self.stack_in = []
-        self.stack_out = []
+        self.stack_in = []  # 用于接收 push 进来的数据（原始顺序）
+        self.stack_out = [] # 用于执行 pop/peek，保存反转后的顺序
 
     def push(self, x: int) -> None:
         self.stack_in.append(x)
@@ -12,7 +12,7 @@ class MyQueue:
         if self.empty():
             return None
         if self.stack_out:
-            return self.stack_out.pop()  # 这里调用的都是List的pop方法，而不是自身
+            return self.stack_out.pop() # 这里调用的都是List的pop方法，而不是自身
         else:
             for i in range(len(self.stack_in)):
                 self.stack_out.append(self.stack_in.pop())
@@ -25,7 +25,7 @@ class MyQueue:
         return ans
 
     def empty(self) -> bool:
-        return not (self.stack_in or self.stack_out)
+        return len(self.stack_in) == 0 and len(self.stack_out) == 0
 
 
 if __name__ == "__main__":
