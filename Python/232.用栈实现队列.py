@@ -11,7 +11,7 @@ class MyQueue:
     def pop(self) -> int:
         if self.empty():
             return None
-        if self.stack_out:
+        if self.stack_out: # 必须先判断出栈是否为空, 如果出栈不为空, 直接从出栈拿就行
             return self.stack_out.pop() # 这里调用的都是List的pop方法，而不是自身
         else:
             for i in range(len(self.stack_in)):
