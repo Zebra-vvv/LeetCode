@@ -1,14 +1,16 @@
 class Solution:
     def removeDuplicates(self, s: str) -> str:
         stack = []
-        for item in s:
-            # 栈不为空且当前元素等于栈顶元素
-            if stack and item == stack[-1]:
-                stack.pop()
+        for i in s:
+            # 栈不为空 且 当前元素等于栈顶元素
+            if stack and i == stack[-1]: # 既然要访问栈顶元素, 前面一定要判空!!!
+                stack.pop() 
+            
+            # 不等的时候才需要append
             else:
-                stack.append(item)
+                stack.append(i)
                 
-        # 将栈中剩余字符串拼接并返回
+        # join() 是 Python 字符串对象的一个方法，用于将一个字符串列表合并成一个字符串，并用调用它的字符串作为“连接符”。
         return "".join(stack)
         
 
