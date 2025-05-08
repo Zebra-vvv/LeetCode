@@ -1,25 +1,29 @@
 from typing import List
-from operator import add, sub, mul
-
 
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
         stack = []
-        # 运算符映射表
-        op_map = {'+': add, '-': sub, '*': mul, '/': lambda x, y: int(x / y)}
-        for token in tokens:
+        op = ['+', '-', '*', '/']
+        for i in tokens:
 
-            # 是数字就入栈
-            if token not in op_map:
-                stack.append(int(token))
+            # 遇到数字就无脑入栈
+            if i not in op:
+                stack.append(int(i)) # 注意要把字符串转成整数
 
-            # 是运算符就弹出两个数并计算后重新压回栈中
+            # 遇到操作符, 就从栈顶弹出两个进行计算, 并将计算结果压回栈中
             else:
-                num2 = stack.pop()
-                num1 = stack.pop()
-                num3 = op_map[token](num1, num2)
-                stack.append(num3)
-       
+                a = stack.pop()
+                b = stack.pop()
+
+                # 这里要注意a和b的顺序, b是后面的
+                if i == '+':
+                    stack.append(b + a)
+                elif i == '-':
+                    stack.append(b - a)
+                elif i == '*':
+                    stack.append(b * a)
+                elif i == '/':
+                    stack.append(int(b / a)) # 向0取整(直接去掉小数部分, 向0靠近)
         return stack.pop()
 
 
