@@ -1,7 +1,7 @@
 from typing import List
 
 class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
+    def __init__(self, val = 0, left = None, right = None):
         self.val = val
         self.left = left
         self.right = right
@@ -14,9 +14,11 @@ class Solution1:
         return self.res
     
     def dfs(self, node):
+        
         # 左右孩子都为空
-        if node is None:
+        if not node:
             return
+        
         self.res.append(node.val)
         self.dfs(node.left)
         self.dfs(node.right)
