@@ -15,18 +15,19 @@ class Solution1:
     
     def dfs(self, node):
         
-        # 左右孩子都为空
+        # 当前节点为空时（代表已经递归到底了），就结束这一层的递归。
         if not node:
             return
         
-        self.res.append(node.val)
+        self.res.append(node.val) # self 是当前对象（类实例）本身，它的属性可以在这个类的所有方法中共享访问
         self.dfs(node.left)
         self.dfs(node.right)
 
 # 迭代法
 class Solution2:
     def preorderTraversal(self, root:TreeNode) -> List[int]:
-        # 根节点为空返回空列表
+        
+        # 根节点为空直接返回空列表
         if not root:
             return []
         
@@ -36,7 +37,7 @@ class Solution2:
             node = stack.pop()
             result.append(node.val) # 所有结点的值在这里遍历收集到result中去
 
-            # 因为栈LIFO的特性，需要先加入右孩子，再加入左孩子
+            # 因为栈LIFO的特性，需要先加入右孩子，再加入左孩子，这样出栈的时候才是“中左右“的顺序
             if node.right:
                 stack.append(node.right)
             if node.left:

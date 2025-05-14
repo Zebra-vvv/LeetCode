@@ -12,7 +12,7 @@ class Solution1:
         return self.res
     
     def dfs(self,node:TreeNode):
-        if node is None:
+        if not node:
             return
         self.dfs(node.left)
         self.dfs(node.right)
