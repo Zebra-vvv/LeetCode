@@ -22,6 +22,8 @@ class Solution1:
 class Solution2:
     # 在前序迭代法的基础上，更换左右收集顺序并反转result列表，即可实现后序迭代法：中左右 -> 中右左 -> 左右中
     def postorderTraversal(self, root:TreeNode):
+        if not root:
+            return []
         stack = [root]
         result = []
         while stack:

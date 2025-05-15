@@ -19,21 +19,28 @@ class Solution1:
         self.dfs(node.right)
 
 # 迭代法
+# 和前序遍历的迭代法有区别：前序可以完全依赖一个栈来控制访问顺序；中序需要靠指针走路，栈只是回头用
+# 前序靠“栈”控制顺序，中序必须靠“指针 + 栈”组合控制。
 class Solution2:
     def inorderTraversal(self, root:TreeNode):
         stack = [] # 因为是”左中右“的遍历顺序，不能把根节点先加入
         result = [] 
         cur = root
+
+        # 如果还没走到底，就往左继续走；走到底了就从栈中弹出处理；直到左也走完，栈也空了，才退出。
         while cur or stack:
-            # 先找到最左下角的结点
+            # 一路向左走，把所有左边节点压入栈
             if cur:
                 stack.append(cur)
                 cur = cur.left
             else:
-                # cur.left为空，处理”中“的逻辑，收集元素
+                # 左子树到底后，指针回到“中”，开始“中”处理
+                # 每个节点的 val 都是 在它自己作为“中”节点 时、从栈中弹出的时候，才被访问和记录的。
+                # 所有的节点，都是在执行 cur = stack.pop() 这一行时被收集进结果列表的。
                 cur = stack.pop()
                 result.append(cur.val)
-                # ”左“和”中“处理完了，应该处理”右“
+
+                # “左”和“中”都处理完了，处理右子树
                 cur = cur.right
         return result
     
