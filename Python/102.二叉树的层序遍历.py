@@ -8,7 +8,7 @@ class TreeNode:
         self.right = right 
 
 class Solution:
-    def levelOrder(self,root:TreeNode) -> List[int]:
+    def levelOrder(self,root:TreeNode) -> List[List[int]]: # 要分层返回，所以是2层List
         if not root:
             return []
 
