@@ -8,7 +8,7 @@ class TreeNode:
         self.right = right 
 
 class Solution:
-    def averageOfLevels(self, root:TreeNode) -> List[int]: # 要分层返回，所以是2层List
+    def averageOfLevels(self, root:TreeNode) -> List[int]: 
         if not root:
             return []
 
@@ -20,12 +20,12 @@ class Solution:
             size = len(queue) 
             for _ in range(size):
                 node = queue.popleft()
-                level_sum += node.val
+                level_sum += node.val # 把每层所有节点的值加和
                 if node.left:
                     queue.append(node.left)
                 if node.right:
                     queue.append(node.right)
-            avg = level_sum / size
+            avg = level_sum / size # 算出这一层的平均值
             result.append(avg)
 
         return result
