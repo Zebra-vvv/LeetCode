@@ -20,8 +20,8 @@ class Solution:
             level = [] # 存放每层的结果
             size = len(queue) # 每层的节点数
 
-            # for循环1次，收集一层节点
-            for i in range(size):
+            # for循环执行1次，收集一个节点；整个for循环结束之后，收集一层节点
+            for _ in range(size):
                 node = queue.popleft()
                 level.append(node.val) # 收集本层节点
                 if node.left:
