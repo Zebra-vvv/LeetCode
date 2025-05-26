@@ -41,5 +41,5 @@ if __name__ == "__main__":
     node3 = TreeNode(3, node6, node7)
     node1 = TreeNode(1, node2, node3)
     solution = Solution()
-    result = solution.levelOrder(node1)
+    result = solution.levelOrderBottom(node1)
     print(result)
