@@ -33,3 +33,24 @@ class Solution:
         inside = self.compare(left.right, right.left)
         isSame = outside and inside
         return isSame
+    
+if __name__ == "__main__":
+    # 测试用例1：对称树
+    '''
+        1
+       / \
+      2   2
+     / \ / \
+    3  4 4  3
+    '''
+    root1 = TreeNode(1)
+    root1.left = TreeNode(2)
+    root1.right = TreeNode(2)
+    root1.left.left = TreeNode(3)
+    root1.left.right = TreeNode(4)
+    root1.right.left = TreeNode(4)
+    root1.right.right = TreeNode(3)
+
+    solution = Solution()
+    result = solution.isSymmetric(root1)
+    print(result)
