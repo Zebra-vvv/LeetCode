@@ -26,9 +26,9 @@ class Solution:
         # 如果当前节点存在一个左叶子节点，就将其值赋给 mid，加到总和里。
         mid = 0
         
-        # 左节点存在 并且 左节点的左右孩子都不存在，说明是叶子结点
+        # 左节点存在 并且 左节点的左右孩子都不存在，说明是叶子节点
         if node.left and not node.left.left and not node.left.right:
-            mid = node.left.val
+            mid = node.left.val # 注意这里是用 node.left 来赋值，因为node.left才是左叶子节点
         return leftSum + rightSum + mid
     
 if __name__ == "__main__":
