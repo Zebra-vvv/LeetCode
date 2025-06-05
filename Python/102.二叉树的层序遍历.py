@@ -28,7 +28,9 @@ class Solution:
                     queue.append(node.left)
                 if node.right:
                     queue.append(node.right)
-            result.append(level) # 把当前层的节点加入最终结果
+                    
+            # for循环结束，一层收集完毕了，把当前层的节点加入最终结果
+            result.append(level) 
         
         return result
     

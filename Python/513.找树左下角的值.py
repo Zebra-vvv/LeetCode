@@ -28,9 +28,9 @@ class Solution:
                     queue.append(node.left)
                 if node.right:
                     queue.append(node.right)
-                result.append(level) # 把当前层的节点加入最终结果
+            result.append(level) # 把当前层的节点加入最终结果
         
-        return result[-1][0] # 记住这个取数方法
+        return result # 记住这个取数方法
     
 
 if __name__ == "__main__":
