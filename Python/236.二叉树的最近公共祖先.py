@@ -5,7 +5,7 @@ class TreeNode:
         self.right = right 
 
 class Solution: 
-    # 本题需要自底向上遍历，用后序遍历正好可以满足要求，
+    # 普通二叉树需要自底向上遍历，用后序遍历正好可以满足要求（需要搜索整棵树）
     # 每层节点返回自己所在子树是否有p或q，把这个信息层层向上汇报，直到找到某个节点的左右子树分别有p和q，说明这个节点就是要找的祖先
     def lowestCommonAncestor(self, root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
         if not root:
