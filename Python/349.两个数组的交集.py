@@ -10,6 +10,7 @@ class Solution1:
         return list(result)
     
 # 哈希查找 O(m + n)
+# 一句话总结：“用集合去重并查找两个数组的公共元素。”利用哈希集合快速查找，时间复杂度优于暴力法。
 class Solution2:
     def intersection (self, nums1:List[int], nums2:List[int]) -> List[int]:
        

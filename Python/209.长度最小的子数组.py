@@ -17,7 +17,6 @@ class Solution:
             right += 1
         return min_len if min_len != float('inf') else 0
 
-
 if __name__ == "__main__":
     solution = Solution()
     nums = [2, 3, 1, 2, 4, 3]

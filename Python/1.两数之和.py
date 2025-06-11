@@ -1,5 +1,6 @@
 from typing import List
 
+# 一句话总结:使用map记录元素及其下标，在遍历数组时快速查找目标差值是否已出现，从而在一次遍历中找到两数之和等于目标值的索引对。
 class Solution:
     def twoSum(self, nums:List[int], target:int) -> List[int]:
         record = {} # 存放遍历到的元素, key是nums中的元素, value是该元素在nums中的下标
@@ -10,6 +11,7 @@ class Solution:
                 res.append(index)
                 res.append(record[target-value])
             else:
+                # 把当前值的下标存到map里去，方便查询
                 record[value] = index
             index += 1
         return res

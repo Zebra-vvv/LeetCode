@@ -6,10 +6,8 @@ class ListNode:
         self.val = val
         self.next = next
 
-
 class Solution:
-    # Optional 是 Python 中的类型提示（Type Hints）中的一个类型，它表示一个值可以是特定类型，也可以是 None
-    def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
+    def removeElements(self, head:ListNode, val:int) -> ListNode:
 
         # 构建一个虚拟头结点
         dummyNode = ListNode()
@@ -20,7 +18,7 @@ class Solution:
             if cur.next.val == val:
                 cur.next = cur.next.next
             else:
-                cur = cur.next
+                cur = cur.next # 注意这句必须放在else里面，因为删除之后，cur.next就已经指向下一个节点了
 
         return dummyNode.next
 

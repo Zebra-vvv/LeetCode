@@ -8,21 +8,20 @@ class Solution1:
         nums.sort()
         return nums
 
-
 # 双指针法
 class Solution2:
     def sortedSquares(self, nums: List[int]) -> List[int]:
         # 因为题目给出的是递增序列, 平方后最大值肯定出现在两边, 从两边依次选择, 从大到小放入新数组即可
-        l, r, i = 0, len(nums)-1, len(nums)-1
+        left, right, i = 0, len(nums)-1, len(nums)-1
         res = [0] * len(nums)  # 需要提前定义列表，存放结果
-        while l <= r:
-            if nums[l] ** 2 < nums[r] ** 2:  # 左右边界进行对比，找出最大值
-                res[i] = nums[r] ** 2
-                r -= 1  # 右指针往左移动
+        while left <= right:
+            if nums[left] ** 2 < nums[right] ** 2:  # 左右边界进行对比，找出最大值
+                res[i] = nums[right] ** 2
+                right -= 1  # 右指针往左移动
             else:
-                res[i] = nums[l] ** 2
-                l += 1  # 左指针往右移动
-            i -= 1  # 存放结果的指针需要往前平移一位
+                res[i] = nums[left] ** 2
+                left += 1  # 左指针往右移动
+            i -= 1  # 从后往前放
         return res
 
 

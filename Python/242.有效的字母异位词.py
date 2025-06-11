@@ -1,3 +1,5 @@
+# 一句话总结：
+# 用长度为26的数组统计字母频次差值，判断两个字符串是否为字母异位词。原理是：s里每个字母 +1，t里每个字母 -1，最后看数组是否全为0。
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         record = [0] * 26

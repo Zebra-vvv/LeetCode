@@ -5,6 +5,7 @@ class ListNode:
         self.val=val
         self.next=next
 
+# 一句话总结：利用快指针先走 n 步，然后快慢指针一起走，当快指针到达末尾时，慢指针刚好在待删除节点的前一个位置。这样就能在单次遍历中删除倒数第 n 个节点。
 class Solution:
     def removeNthFromEnd(self, head:ListNode, n:int) -> ListNode:
         dummyHead = ListNode()

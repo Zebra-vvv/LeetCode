@@ -1,3 +1,4 @@
+# 一句话总结：利用集合记录出现过的数，通过不断计算每位平方和，判断是否会循环或最终为1，从而判断是否为快乐数。
 class Solution:
     def isHappy(self, n: int) -> bool:
         record = set()
@@ -20,9 +21,8 @@ class Solution:
             remainder = n % 10 # 取余, 取出最后一位（个位）
             sum += remainder ** 2 # 最后一位平方后加入sum
             quotient = n // 10 # 取商, 去掉最后一位（相当于“右移”）
-            n = quotient # 商作为下一层循环的n
+            n = quotient # 如果只剩一位数，商会等于0，所以可以判断是否算完了
         return sum
-
 
 if __name__ == "__main__":
     n = 19
