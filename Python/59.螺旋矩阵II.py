@@ -1,5 +1,6 @@
 from typing import List
 
+# 一句话总结：模拟矩阵螺旋填数过程，按圈层从外到内依次赋值，最后处理中心点（若 n 为奇数）。
 class Solution:
     def generateMatrix(self, n: int) -> List[List[int]]:
 

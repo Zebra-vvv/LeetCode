@@ -6,7 +6,7 @@ class ListNode:
         self.val = val
         self.next = next
 
-
+# 一句话总结：通过构造虚拟头结点并使用指针操作，成对交换链表中相邻的节点。
 class Solution:
     def swapPairs(self, head: ListNode) -> ListNode:
         dummyHead = ListNode(next=head)

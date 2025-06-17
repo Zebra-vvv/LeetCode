@@ -8,6 +8,8 @@ class Solution1:
         nums.sort()
         return nums
 
+
+# 一句话总结：双指针从两端向中间移动，比较平方值大小，将较大值从后往前填入结果数组，实现平方后数组的有序输出。
 # 双指针法
 class Solution2:
     def sortedSquares(self, nums: List[int]) -> List[int]:

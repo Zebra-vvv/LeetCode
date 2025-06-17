@@ -1,5 +1,6 @@
 from typing import List
 
+# 一句话总结：滑动窗口通过移动左右指针维护子数组和，动态收缩窗口长度，找到和大于等于 target 的最小连续子数组长度。
 # 滑动窗口法（双指针法）
 class Solution:
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:

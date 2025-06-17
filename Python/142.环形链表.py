@@ -3,6 +3,8 @@ class ListNode:
         self.val = val
         self.next = next
 
+# 一句话总结：
+# 通过快慢指针（Floyd 判圈法）判断链表是否有环，若有环，则从相遇点和头结点同时出发，以相同速度遍历，二者在环的入口处相遇，即为入环节点。
 class Solution:
     def detectCycle(self, head:ListNode) -> ListNode:
         slow, fast = head, head

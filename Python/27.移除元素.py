@@ -1,6 +1,7 @@
 from typing import List
 
 # 双指针法
+# 一句话总结：快慢指针遍历数组，将不等于目标值的元素放到slow里面，实现原地删除并返回新长度。
 class Solution:
     def removeElement(self, nums:List[int], val:int) -> int:
         slow = 0

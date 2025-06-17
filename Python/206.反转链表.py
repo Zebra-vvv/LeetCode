@@ -6,6 +6,7 @@ class ListNode:
         self.val = val
         self.next = next
 
+# 一句话总结：使用双指针反转链表，通过逐个反转节点指向实现整个链表的逆序。
 # 双指针法
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:

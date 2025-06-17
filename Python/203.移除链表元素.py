@@ -6,6 +6,7 @@ class ListNode:
         self.val = val
         self.next = next
 
+# 一句话总结：使用虚拟头结点，遍历链表并删除所有值等于给定值的节点，注意删除后指针不前移以确保不跳过节点。
 class Solution:
     def removeElements(self, head:ListNode, val:int) -> ListNode:
 

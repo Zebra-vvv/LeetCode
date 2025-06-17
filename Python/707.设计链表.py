@@ -3,7 +3,7 @@ class ListNode:
         self.val = val
         self.next = next
 
-
+# 一句话总结：实现一个带虚拟头结点的链表类，支持按索引增删查节点，并维护链表长度以确保边界合法性。
 class MyLinkedList:
 
     def __init__(self):
