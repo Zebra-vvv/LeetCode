@@ -1,5 +1,11 @@
 from typing import List
 
+# 一句话总结：
+# KMP中getNext和strStr看似结构类似，其实前者是分析模式串自身结构，构建跳转表，后者是在匹配失败时用跳转表快速回退，它们虽然过程相似，但职责不同，前者为后者服务。
+# 两者的共同核心是：通过回退 j 指针，避免重复比较，提高匹配效率。
+
+# 刷题你就记住：getNext和strStr遇到匹配不相等的情况下，这样回退就行 j = next[j - 1]，不要纠结原因了
+
 # 其实就是KMP算法
 class Solution:
 
@@ -10,7 +16,7 @@ class Solution:
         next[0] = 0
 
         # i是后缀末尾的下标
-        for i in range(1, len(s)): 
+        for i in range(1, len(s)):
 
             # 前后缀不相同的情况, 需要连续回退, 故需要用 while 而不是 if
             while j > 0 and s[i] != s[j]:

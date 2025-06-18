@@ -1,5 +1,8 @@
 from typing import List
 
+# 一句话总结：
+# 先将数组排序，然后固定前两个数 nums[a] 和 nums[b]，在剩下的区间 [b+1, n-1] 中使用双指针 c 和 d 查找满足 nums[a] + nums[b] + nums[c] + nums[d] == target 的组合；
+# 其实就是在三数之和的基础上，再加一层for循环
 class Solution:
     def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
         res = []

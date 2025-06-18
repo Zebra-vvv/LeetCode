@@ -1,3 +1,5 @@
+# 一句话总结：
+# 用一个长度为26的数组统计 `magazine` 中每个字母出现的次数，再依次扣除 `ransomNote` 所需的字母数，若出现负数则表示无法构成。
 class Solution:
     def canConstruct(self, ransom:str, magazine:str) -> bool:
         # 和 242.有效字母的异位词 思路几乎一样

@@ -1,5 +1,6 @@
 from typing import List
 
+# 一句话总结:使用双指针从两端向中间交换字符，实现原地反转字符串列表。
 class Solution:
     def reverseString(self, str: List[str]) -> List[str]:
         left = 0

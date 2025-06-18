@@ -1,3 +1,4 @@
+# 一句话总结：利用双指针反转拆分后的单词列表顺序，再用空格连接还原成翻转后的字符串。
 class Solution:
     def reverseWords(self, s: str) -> str:
 
