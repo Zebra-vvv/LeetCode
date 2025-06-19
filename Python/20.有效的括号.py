@@ -10,7 +10,8 @@ class Solution:
                 stack.append("]")
             elif i == "{":
                 stack.append("}")
- 
+
+            # 没有走到上面3个if分支里，说明当前开始遍历右括号了
             # 如果栈已经为空(右括号多了, 把栈内元素提前弹完了) 或者 当前元素和栈顶元素不相等，说明匹配失败
             elif not stack or i != stack[-1]:
                 return False

@@ -14,6 +14,7 @@ class MyQueue:
         if self.stack_out: # 必须先判断出栈是否为空, 如果出栈不为空, 直接从出栈拿就行
             return self.stack_out.pop() # 这里调用的都是List的pop方法，而不是自身
         else:
+            # 如果出栈为空，将 入栈 中的数据全部弹出并压入 出栈 来完成元素顺序反转，从而模拟队列的“先进先出”弹出操作。
             for i in range(len(self.stack_in)):
                 self.stack_out.append(self.stack_in.pop())
             return self.stack_out.pop()

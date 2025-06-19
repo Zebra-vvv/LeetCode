@@ -1,11 +1,11 @@
 from collections import deque
 
-#队列是先进先出（FIFO），栈是后进先出（LIFO）。
-#我们用一个队列 que 模拟栈，为了实现 pop() 弹出“最后入栈的元素”，我们要把前面所有元素“让一让”，让最后那个排到前面来，再弹出它。
+# 一句话总结：
+# 用一个单向队列 que 模拟栈，为了实现 pop() 弹出“最后入栈的元素”，我们要把前面所有元素“让一让”，让最后那个排到前面来，再弹出它。
 class MyStack:
-    # 一个队列在模拟栈弹出元素的时候只要将队列头部的元素（除了最后一个元素外） 重新添加到队列尾部，此时再去弹出元素就是栈的顺序了。
+    
     def __init__(self):
-        self.que = deque()
+        self.que = deque() # 虽然deque是双端队列，但是这题只当成了一个单向队列来用
 
     def push(self, x: int) -> None:
         self.que.append(x)
@@ -14,8 +14,7 @@ class MyStack:
         if self.empty():
             return None
         for i in range(len(self.que)-1):
-            # 在 Python 的 collections.deque 中，队列默认的“入口”是右边，出口是左边
-            # 循环将队列中的第一个元素移到队列的末尾。这个操作相当于将队列中最先进入的元素移到了最后，实现了栈的先进后出（FILO）的特性
+            # 在 Python 的 collections.deque 中，默认的append是右边进入，popleft顾名思义是从左边弹出
             self.que.append(self.que.popleft())
         return self.que.popleft()
 
