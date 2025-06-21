@@ -1,6 +1,8 @@
 from collections import deque
 from typing import List
 
+# 一句话总结：利用单调队列维护滑动窗口内的最大值，始终保持队列从大到小排列，每次窗口滑动时更新队头即得最大值。
+
 # 自定义一个从大到小的单调队列
 class Myqueue:
     def __init__(self):
@@ -8,7 +10,7 @@ class Myqueue:
 
     def push(self, value):
         
-        # 如果value比前面的值都大, 就持续抛弃前面的值, 因为较小值没有必要维护
+        # push之前先判断，如果value比前面的值都大, 就持续抛弃前面的值, 因为较小值没有必要维护
         while self.queue and self.queue[-1] < value:
             self.queue.pop()
         self.queue.append(value)

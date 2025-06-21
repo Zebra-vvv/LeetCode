@@ -1,3 +1,4 @@
+# 一句话总结：用栈去重连续相邻重复字符，当前字符与栈顶相同则弹出，不同则压入，最后将栈中字符拼接返回。
 class Solution:
     def removeDuplicates(self, s: str) -> str:
         stack = []

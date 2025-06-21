@@ -24,6 +24,7 @@ class Solution1:
         self.dfs(node.right)
 
 # 迭代法
+# 一句话总结：使用栈来模拟递归的过程，先将根节点入栈，每次弹出栈顶节点并记录其值，然后先将右子节点入栈，再将左子节点入栈，确保出栈顺序为“根-左-右”，从而实现前序遍历。
 class Solution2:
     def preorderTraversal(self, root:TreeNode) -> List[int]:
         
@@ -31,7 +32,7 @@ class Solution2:
         if not root:
             return []
         
-        stack =  [root]  # 这是一个栈，用于存储待访问的节点，在 Python 中，栈通常使用列表来实现，因为列表具有压栈（append）和出栈（pop）操作，非常适合栈的特性。
+        stack =  [root]  # 这是一个栈，用于存储待访问的节点
         result = []      # 这是一个列表，用于保存遍历的结果
         while stack:
             node = stack.pop()

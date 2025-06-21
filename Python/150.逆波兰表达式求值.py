@@ -1,5 +1,6 @@
 from typing import List
 
+# 一句话总结：使用栈模拟逆波兰表达式的计算过程，遇数字入栈，遇运算符弹出栈顶两个元素运算后再压入，注意操作数顺序与除法取整规则。
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
         stack = []
