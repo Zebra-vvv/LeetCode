@@ -7,6 +7,12 @@ class TreeNode:
         self.right = right
 
 class Solution:
+    def hasPathSum(self, root:TreeNode, targetSum:int) -> bool:
+        path = [] 
+        if not root:
+            return False
+        return self.dfs(root, path, targetSum)
+    
     def dfs(self, node, path, targetSum) -> bool:
 
         # 采用前序遍历，“一边走一边记录路径”，每次进入一个节点就能立即记录它在路径上的位置。
@@ -19,20 +25,15 @@ class Solution:
         if node.left:  # 左
             if self.dfs(node.left, path, targetSum):
                 return True # 找到了就提前返回，不继续递归
-            path.pop()  
+            path.pop() # 回溯
+
         if node.right:  # 右 
             if self.dfs(node.right, path, targetSum):
                 return True # 找到了就提前返回，不继续递归
-            path.pop()  
+            path.pop()  # 回溯
 
         # 左右子树都没找到符合条件的路径
         return False
-
-    def hasPathSum(self, root:TreeNode, targetSum:int) -> bool:
-        path = [] 
-        if not root:
-            return False
-        return self.dfs(root, path, targetSum)
     
 if __name__ == "__main__":
     node5 = TreeNode(5)

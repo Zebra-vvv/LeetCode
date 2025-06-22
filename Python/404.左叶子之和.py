@@ -6,6 +6,7 @@ class TreeNode:
         self.left = left
         self.right = right
 
+# 一句话总结：采用后序遍历，dfs函数返回值就是当前节点以下所有左叶子数值之和，层层向上汇报到根
 class Solution:
     def sumOfLeftLeaves(self, root:TreeNode) -> int:
         if not root:
