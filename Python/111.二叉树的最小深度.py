@@ -7,6 +7,7 @@ class TreeNode:
         self.left = left
         self.right = right
 
+# 一句话总结：层序遍历模板，和最大深度一样统计depth，如果某个节点没有左右孩子，直接提前返回结果即可
 class Solution:
     def minDepth(self, root: TreeNode) -> int:
         if not root:

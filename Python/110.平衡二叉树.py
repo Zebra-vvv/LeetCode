@@ -4,6 +4,7 @@ class TreeNode:
         self.left = left
         self.right = right
 
+# 一句话总结：用后序遍历，每个节点向上汇报自己是否平衡
 class Solution:
     def isBalanced(self, root:TreeNode) -> bool:
         if self.dfs(root) != -1:
@@ -21,6 +22,7 @@ class Solution:
 
         # 中
         # 如果左子树或者右子树已经不平衡了，无需继续遍历，直接返回-1
+        # 如果当前节点的左右子树高度差大于1，直接返回-1
         if leftHeight == -1 or rightHeight == -1 or abs(leftHeight - rightHeight) > 1:
             return -1 # 返回-1：当前节点的左右子树不平衡
         

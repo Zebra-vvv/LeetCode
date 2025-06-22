@@ -6,6 +6,7 @@ class Node:
         self.val = val
         self.children = children if children is not None else [] # 健壮性
 
+# 一句话总结：和二叉树层序遍历差不多，只不过需要for循环来加入一个节点的所有孩子
 class Solution:
     def levelOrder(self, root: 'Node') -> List[List[int]]:
         if not root:
@@ -19,7 +20,8 @@ class Solution:
             for _ in range(size):
                 node = que.popleft()
                 level.append(node.val)
-                
+
+                # for循环加入当前节点的所有孩子
                 for child in node.children:
                     que.append(child)
 

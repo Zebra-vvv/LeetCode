@@ -7,6 +7,7 @@ class TreeNode:
         self.left = left
         self.right = right 
 
+# 一句话总结：层序遍历模板，每层计算一下平均值就行了
 class Solution:
     def averageOfLevels(self, root:TreeNode) -> List[int]: 
         if not root:

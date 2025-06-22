@@ -7,7 +7,7 @@ class TreeNode:
         self.left = left
         self.right = right 
 
-# 层序遍历的模板来解决
+# 一句话总结：层序遍历模板，加一个是否为当前层最后一个节点的判断条件即可
 class Solution:
     def rightSideView(self, root:TreeNode) -> List[int]:
         if not root:

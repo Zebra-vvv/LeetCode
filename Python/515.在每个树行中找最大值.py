@@ -7,6 +7,7 @@ class TreeNode:
         self.left = left
         self.right = right 
 
+# 一句话总结：层序遍历模板，只收集每行的最大值
 class Solution:
     def largestValues(self, root:TreeNode) -> List[int]:
         if not root:
@@ -18,7 +19,9 @@ class Solution:
             size = len(que)
             for _ in range(size):
                 node = que.popleft() # 一定要记住，队列要popleft，而不是pop
+
                 max_val = max(max_val, node.val) # 只维护每行最大值
+
                 if node.left:
                     que.append(node.left)
                 if node.right:

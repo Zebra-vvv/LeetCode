@@ -8,6 +8,7 @@ class Node:
         self.right = right
         self.next = next 
 
+# 一句话总结：层序遍历模板，定义一个pre，保存上一个节点，方便后续指向右侧节点
 class Solution:
     # 'Node'：变成了一个前向引用，Python 解释器此时不会立即去解析这个类型，而是把 'Node' 当作字符串保存下来，留到后面真正执行时再解析。
     # leetcode系统中提交必须加上单引号，不然会报错

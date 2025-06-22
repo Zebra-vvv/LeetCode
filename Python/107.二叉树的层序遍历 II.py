@@ -7,6 +7,7 @@ class TreeNode:
         self.left = left
         self.right = right 
 
+# 一句话总结：直接套层序遍历模板，最后逆序输出就是自底向上了
 class Solution:
     def levelOrderBottom(self,root:TreeNode) -> List[List[int]]: # 要分层返回，所以是2层List
         if not root:

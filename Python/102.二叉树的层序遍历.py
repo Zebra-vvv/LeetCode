@@ -7,6 +7,7 @@ class TreeNode:
         self.left = left
         self.right = right 
 
+# 一句话总结：使用队列按层遍历二叉树，每次记录当前层的节点值，逐层收集构成最终的分层列表结果。
 class Solution:
     def levelOrder(self,root:TreeNode) -> List[List[int]]: # 要分层返回，所以是2层List
         if not root:

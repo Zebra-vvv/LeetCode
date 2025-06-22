@@ -8,7 +8,7 @@ class Node:
         self.right = right
         self.next = next  
 
-# 和116题的代码一模一样
+# 一句话总结：用层序遍历的模板，116和117都能一样解决，代码一模一样
 class Solution:
     def connect(self, root:'Node') -> 'Node': 
         if not root:

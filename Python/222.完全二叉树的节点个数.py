@@ -4,6 +4,7 @@ class TreeNode:
         self.left = left
         self.right = right 
 
+# 一句话总结：用后序遍历，因为每一个节点都向上汇报自己的结果，直到汇报到根节点，就知道总数了
 class Solution:
     def countNodes(self, root:TreeNode) -> int:
         if not root:

@@ -6,6 +6,7 @@ class TreeNode:
         self.left = left
         self.right = right
 
+# 一句话总结：层序遍历模板，每层累加depth即可
 class Solution:
     def maxDepth(self, root: TreeNode) -> int:
         if not root:
