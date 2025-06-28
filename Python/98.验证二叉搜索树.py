@@ -1,31 +1,32 @@
 class TreeNode:
-    def __init__(self, val=0, left = None, right = None):
+    def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
 
-# 关键思路：中序遍历二叉搜索树，一定是一个升序数组！
+
+# 一句话总结：本题利用中序遍历二叉搜索树应为升序序列的性质，借助 pre 指针逐个比较，判断是否满足严格递增从而验证其合法性。
 class Solution:
     def __init__(self):
         self.pre = None  # 设置为实例变量，递归中共享
 
-    def isValidBST(self, root:TreeNode) -> bool:
-        
+    def isValidBST(self, root: TreeNode) -> bool:
+
         # 一个空节点，也算是二叉搜索树
         # 也会层层向上返回 True，直到遇到不合法的情况才会中途返回 False
         if not root:
             return True
-        
-        left = self.isValidBST(root.left) # 左
+
+        left = self.isValidBST(root.left)  # 左
 
         # 中
         if self.pre and self.pre.val >= root.val:
             return False
-        self.pre = root # pre 按照中序遍历顺序往后移动一个节点
-        
-        right = self.isValidBST(root.right) # 右
+        self.pre = root  # pre 按照中序遍历顺序往后移动一个节点
 
-        return left and right # 左右子树都符合，整棵树才符合
+        right = self.isValidBST(root.right)  # 右
+
+        return left and right  # 左右子树都符合，整棵树才符合
 
 
 if __name__ == "__main__":
@@ -48,4 +49,3 @@ if __name__ == "__main__":
     solution = Solution()
     result = solution.isValidBST(root1)
     print(result)
-      

@@ -1,10 +1,11 @@
 from typing import List
 
+
 class TreeNode:
-    def __init__(self, val=0, left = None, right = None):
+    def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
-        self.right = right 
+        self.right = right
 
 
 # 一句话总结：递归地选择有序数组的中间元素作为根节点，左右子数组分别构建左右子树，从而构造一棵高度平衡的二叉搜索树。
@@ -24,9 +25,3 @@ class Solution:
         root.right = self.sortedArrayToBST(nums_right)
 
         return root
-
-
-
-
-
-

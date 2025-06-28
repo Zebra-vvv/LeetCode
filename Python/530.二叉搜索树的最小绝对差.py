@@ -1,19 +1,21 @@
 class TreeNode:
-    def __init__(self, val=0, left = None, right = None):
+    def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
 
+
+# 一句话总结：本题通过中序遍历二叉搜索树得到有序序列，比较相邻节点值的差值，维护最小值 min_diff，从而求出任意两节点的最小差。
 class Solution:
     def __init__(self):
-        self.min_diff = float('inf') # 正无穷
+        self.min_diff = float('inf')  # 正无穷
         self.pre = None
 
-    def dfs(self, node:TreeNode):
+    def dfs(self, node: TreeNode):
 
         if not node:
             return
-        
+
         self.dfs(node.left)  # 左
 
         if self.pre:  # 中
@@ -25,7 +27,8 @@ class Solution:
     def getMinimumDifference(self, root):
         self.dfs(root)
         return self.min_diff
-    
+
+
 if __name__ == "__main__":
     # 测试用例
     '''
