@@ -27,9 +27,7 @@ class Solution:
             self.path.append(candidates[i])
             curSum += candidates[i]
 
-            # 回溯搜索过程就像一棵“决策树”：
-            # 纵向（递归）走下去：在一个组合中继续添加元素，startIndex 保持不变，表示重复选取元素
-            # 横向（for循环）遍历：表示你在当前层中尝试不同的选项，所以 i（也就是 startIndex）会发生变化。
+            # 可以重复选取元素，startIndex传i
             self.backtracking(candidates, target, curSum, i)
             curSum -= candidates[i]
             self.path.pop()

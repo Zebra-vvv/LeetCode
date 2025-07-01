@@ -1,8 +1,7 @@
 from typing import List
 
+
 # 一句话总结：切割问题其实和组合问题是一样的，就是要搞清楚子串的范围其实就是[startIndex, i]
-
-
 class Solution:
     def partition(self, s: str) -> List[List[str]]:
         self.path = []
