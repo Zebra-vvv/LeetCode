@@ -21,6 +21,7 @@ class Solution:
         # 终止条件
         if curSum == target:
             self.result.append(self.path[:])
+            return 
 
         # 单层递归逻辑
         for i in range(startIndex, len(candidates)):
