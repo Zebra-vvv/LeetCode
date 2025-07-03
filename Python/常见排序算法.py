@@ -1,11 +1,12 @@
 from typing import List
 
+
 # 冒泡排序（升序）
-def bubble_sort(nums:List[int]):
+def bubble_sort(nums: List[int]):
     n = len(nums)
     for i in range(n - 1):
         swapped = False
-        for j in range(0, n - 1 -i):
+        for j in range(0, n - 1 - i):
             if nums[j] > nums[j+1]:
                 tmp = nums[j]
                 nums[j] = nums[j+1]
@@ -14,7 +15,6 @@ def bubble_sort(nums:List[int]):
         if swapped == False:
             break
     return nums
-
 
 
 # 快速排序（升序）
@@ -42,6 +42,7 @@ def quick_sort(nums):
 
     # 对左右部分递归排序，并拼接
     return quick_sort(left) + mid + quick_sort(right)
+
 
 # 测试
 nums = [5, 2, 4, 1, 6, 16, 19, 7]
