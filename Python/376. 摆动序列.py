@@ -17,7 +17,7 @@ class Solution:
             curdiff = nums[i+1] - nums[i]
 
             # prediff要带上等号，因为要考虑平坡的情况
-            if prediff >= 0 and curdiff < 0 or prediff <= 0 and curdiff > 0:
+            if (prediff >= 0 and curdiff < 0) or (prediff <= 0 and curdiff > 0):
                 count += 1
 
                 # 只在摆动变化时更新prediff
