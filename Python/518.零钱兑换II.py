@@ -21,3 +21,11 @@ class Solution:
                 dp[j] += dp[j - coins[i]]
 
         return dp[amount]
+
+
+if __name__ == "__main__":
+    amount = 5
+    coins = [1, 2, 5]
+    solution = Solution()
+    res = solution.change(amount, coins)
+    print(res)
